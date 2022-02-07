@@ -1,0 +1,87 @@
+<html>
+
+<body>
+ <h1>Project Page</h1>
+
+<div>
+  <row>
+    <col>
+
+      <form action="/project/submit/" method="POST">
+        
+        <label for="projNo">Project No.</label>
+        <input type="text" id="projNo" name="projNo"><br>
+        <label for="projName">Project Name</label>
+        <input type="text" id="projName" name="projName"><br>
+
+        <h2>Project Info</h2>
+          <label for="value">Project Value</label>
+          <input type="number" id="projValue" name="projValue"><br>
+          <p>Coordinates</p>
+          <label for="coorEW">E/W</label>
+          <input type="number" id="coorEW" name="coorEW">
+          <label for="coorNS">N/S</label>
+          <input type="number" id="coorNS" name="coorNS"><br>
+
+          <h3>Dates</h3>
+            <label for="dateDesignStart">Design Start</label>
+            <input type="date" id="dateDesignStart" name="dateDesignStart"><br>
+            <label for="dateConstructionStart">Construction Start</label>
+            <input type="date" id="dateConstructionStart" name="dateConstructionStart"><br>
+            <label for="dateConstructionEnd">Construction End</label>
+            <input type="date" id="dateConstructionEnd" name="dateConstructionEnd"><br>
+
+        <h2>Material Quantities</h2>
+          <h3>Stage 2</h3>
+            <label for="stage2GA">GIA</label>
+            <input type="number" id="stage2GA" name="stage2GA"><br>
+
+            <h4>Total Materials</h4>
+              <h5>Concrete</h5>
+                <label for="stage2ConInsitu">Insitu, m3</label>
+                <input type="number" id="stage2ConInsitu" name="stage2ConInsitu"><br>
+                <label for="stage2ConPreCast">Pre-Cast, m3</label>
+                <input type="number" id="stage2ConPreCast" name="stage2ConPreCast"><br>
+                <label for="stage2ConPiles">Piles, m3</label>
+                <input type="number" id="stage2ConPiles" name="stage2ConPiles"><br>
+
+              <h5>Steel</h5>
+                <label for="stage2SteelRebar">Rebar, kg</label>
+                <input type="number" id="stage2SteelRebar" name="stage2SteelRebar"><br>
+                <label for="stage2SteelSections">Sections, kg</label>
+                <input type="number" id="stage2SteelSections" name="stage2SteelSections"><br>
+                <label for="stage2SteelSheetPiles">Sheet Piles, kg</label>
+                <input type="number" id="stage2SteelSheetPiles" name="stage2SteelSheetPiles"><br>
+
+              <h5>Timber</h5>
+                <label for="stage2TimberGlulam">Glulam, m3</label>
+                <input type="number" id="stage2TimberGlulam" name="stage2TimberGlulam"><br>
+                <label for="stage2TimberCLT">CLT, m3</label>
+                <input type="number" id="stage2TimberCLT" name="stage2TimberCLT"><br>
+                <label for="stage2TimberOther">Other, m3</label>
+                <input type="number" id="stage2TimberOther" name="stage2TimberOther"><br>
+
+              <h5>Masonry</h5>
+                <label for="stage2MasonryBrick">Brickwork, m3</label>
+                <input type="number" id="stage2MasonryBrick" name="stage2MasonryBrick"><br>
+                <label for="stage2MasonryBlock">Blockwork, m3</label>
+                <input type="number" id="stage2MasonryBlock" name="stage2MasonryBlock"><br>
+
+        <input type="submit" value="OK">
+
+      </form>
+    </col>
+
+    <col>
+      <h3>Material Quants Graph</h3>
+      <h3>Carbon Graph</h3>
+      <h3>LETI/SCORS Graph</h3>
+    </col>
+  </row>
+</div>
+
+
+
+</body>
+
+</html>
