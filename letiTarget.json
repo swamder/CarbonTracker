@@ -1,0 +1,17 @@
+{
+ "BAU": {"office": {"total": 950, "structure": 618, "super": 288, "sub": 102},
+          "residential": {"total": 350, "structure": 390, "super": 288, "sub": 102},
+          "schools": {"total": 350, "structure": 390, "super": 288, "sub": 102},
+          "retail": {"total": 350, "structure": 390, "super": 288, "sub": 102}
+            },
+"2020": {"office": {"total": 600, "structure": 390, "super": 288, "sub": 102},
+          "residential": {"total": 500, "structure": 335, "super": 230, "sub": 105},
+          "schools": {"total": 500, "structure": 230, "super": 150, "sub": 80},
+          "retail": {"total": 600, "structure": 335, "super": 230, "sub": 105}
+            },
+"2030": {"office": {"total": 350, "structure": 228, "super": 168, "sub": 60},
+          "residential": {"total": 300, "structure": 201, "super": 138, "sub": 63},
+          "schools": {"total": 300, "structure": 138, "super": 90, "sub": 48},
+          "retail": {"total": 300, "structure": 201, "super": 138, "sub": 63}
+            }
+}
