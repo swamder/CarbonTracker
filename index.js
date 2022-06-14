@@ -13,10 +13,15 @@ const project = require('./models/project.js');
 const carbonFactors = require('./models/carbonFactors.js');
 
 const home = require('./middlewares/homePage.js');
+const projectExplorer = require('./middlewares/projectExplorer.js');
 const newProject = require('./middlewares/saveNewProject.js');
 
 app.get('/', (req, res) => {
   home.homePage(req, res);
+});
+
+app.get('/template', (req,res) => {
+  res.sendFile(__dirname + "/views/template.html");
 });
 
 app.post('/projectSearch', (req, res) => {
@@ -24,15 +29,27 @@ app.post('/projectSearch', (req, res) => {
     if (err) {console.error(err)};
   }).then(result => {
       if (result === null){res.send('Project not found')}
-      else {res.redirect('/project/' + result.projNo)}
+      else {res.redirect('/projects/' + result.projNo)}
     });
 });
 
-app.get('/project/:projNo', (req,res) => {
-  res.sendFile(__dirname + "/views/project.html")
+app.get('/projects/all', (req,res)=> {
+  project.model.find({}, function(err, results){
+    if (err) {
+     console.error(err);
+     res.redirect('error');
+    }else{
+      const tableData = projectExplorer.createTableDataArray(results);
+      res.json({projects: tableData});
+    };
+  })
 });
 
-app.get('/project/:projNo/json', (req,res) => {
+app.get('/projects/:projNo', (req,res) => {
+  res.sendFile(__dirname + "/views/projectPage.html")
+});
+
+app.get('/projects/:projNo/json', (req,res) => {
   //res.sendFile(__dirname + "/views/project.html")
   project.model.findOne({projNo: req.params.projNo}, function(err,data) {
     if (err) {console.log(err); };
@@ -52,7 +69,7 @@ app.post('/NewProject/submit/', (req,res) => {
   newProject.save(req,res);
   //console.log(err);
   console.log("Project " + req.body.projNo + " saved");
-  res.redirect('/project/' + req.body.projNo);
+  res.redirect('/projects/' + req.body.projNo);
 });
 
 app.get('/ECO2eFactors', (req, res) => {

@@ -11,7 +11,10 @@ const projectSchema = new Schema({
     type: {type: String, required: true},
     value: Number,
     cooridantes: {ew: Number, ns: Number},
-    dates: {designStart: {type: Date, required: true}, constructionStart: {type: Date, required: true}, constructionEnd: {type: Date, required: true}} 
+    dates: {
+      designStart: {type: Date, required: true},
+      constructionStart: {type: Date, required: true},
+      constructionEnd: {type: Date, required: true}} 
     },
   stage2: stage.schema,
   stage3: stage.schema,
